@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\Validator\Validation;
+use App\Service\MessageGenerator;
 
 /**
  * @Route("/post")
@@ -93,4 +96,9 @@ class PostController extends AbstractController
 
         return $this->redirectToRoute('post_index');
     }
+
+    /*public function validatePostData(ValidatorInterface $validator)
+    {
+
+    }*/
 }
