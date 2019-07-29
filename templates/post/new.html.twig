@@ -3,9 +3,11 @@
 {% block title %}New Post{% endblock %}
 
 {% block body %}
+    {{ parent() }}
+
     <h1>Create new Post</h1>
 
     {{ include('post/_form.html.twig') }}
 
-    <a href="{{ path('post_index') }}">back to list</a>
+    <a class="btn btn-primary" href="{{ path('post_index') }}" role="button">Back to list</a>
 {% endblock %}

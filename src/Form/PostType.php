@@ -15,14 +15,21 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('text')
+            ->add('title',
+                null,
+                ['attr' => ['class' => 'form-control']]
+            )
+            ->add('text',
+                null,
+                ['attr' => ['class' => 'form-control']]
+            )
             ->add('category', EntityType::class, [
                 // looks for choices from this entity
                 'class' => Category::class,
 
                 // uses the User.username property as the visible option string
                 'choice_label' => 'name',
+                'attr' => ['class' => 'btn-secondary dropdown-toggle']
 
                 // used to render a select box, check boxes or radios
                 // 'multiple' => true,
